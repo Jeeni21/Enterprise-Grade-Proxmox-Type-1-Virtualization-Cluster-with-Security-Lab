@@ -118,9 +118,7 @@ This project emphasizes:
 
 
 
-```markdown
-![Cluster Overview](cluster-overview.png)
-```
+![Cluster Overview](./cluster-overview.png)
 
 ---
 
