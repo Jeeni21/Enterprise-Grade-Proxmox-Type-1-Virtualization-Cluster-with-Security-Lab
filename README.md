@@ -1,150 +1,131 @@
-📌 Project Overview
 
-This project demonstrates the design, deployment, and management of a 2-node Proxmox VE (Type-1 Hypervisor) cluster simulating an enterprise infrastructure environment.
+## 📌 Project Overview
+
+This project demonstrates the design, deployment, and management of a **2-node Proxmox VE (Type-1 Hypervisor) cluster** simulating an enterprise infrastructure environment.
 
 The lab was built to simulate:
 
-Enterprise virtualization architecture
+- Enterprise virtualization architecture
+- Distributed cluster configuration with quorum
+- Centralized storage integration
+- Security monitoring & log aggregation
+- Network segmentation & firewall enforcement
+- Endpoint security monitoring
+- Infrastructure documentation & control validation
 
-Security monitoring & logging
+The environment reflects enterprise-grade virtualization and security operations practices.
 
-Centralized storage
+---
 
-Domain-based authentication
+## 🏗️ Cluster Architecture
 
-Network segmentation
+### 🔹 Cluster Details
 
-Infrastructure documentation and control validation
+- **Cluster Name:** SecX
+- **Nodes:**
+  - `pve` – 192.168.1.105
+  - `xds` – 192.168.1.104
+- **Quorum:** Enabled
+- **Total CPU Cores:** 32
+- **Total Memory:** ~54 GB
+- **Total Storage:** ~1.34 TB
+- **Proxmox Version:** 8.x
 
-The cluster maintains quorum and operates in a distributed configuration.
+Both nodes are synchronized and actively participating in cluster operations.
 
-🏗️ Architecture Overview
-🧱 Cluster Configuration
+---
 
-Cluster Name: SecX
+## 💻 Virtual Machines Deployed
 
-Nodes:
+### 🔹 Infrastructure Systems
 
-pve – 192.168.1.105
+| VM ID | OS | Purpose |
+|-------|----|----------|
+| 100 | Windows 11 | Domain-joined endpoint testing |
+| 101 | TrueNAS | Centralized storage server |
+| 102 | Parrot OS | Security testing environment |
+| 103 | Security VM | Adversary simulation & log generation |
 
-xds – 192.168.1.104
+---
 
-Quorum: Enabled
+## 🌐 Network Design
 
-Total CPU Cores: 32
+- Layered segmentation using virtual bridges
+- Static IP configuration
+- Firewall rule enforcement and logging
+- Secure remote VPN overlay
+- DNS-level filtering and monitoring
+- IDS log forwarding to SIEM
 
-Total Memory: ~54GB
+---
 
-Total Storage: 1.34TB
 
-Both nodes are online and synchronized.
+## 📊 Resource Monitoring
 
-💻 Virtual Machines Deployed
-🔹 Infrastructure Services
-VM ID	System	Purpose
-100	Windows 11	Domain-joined endpoint testing
-101	TrueNAS	Centralized storage
-103	Security Testing VM	Adversary simulation & analysis
-🔹 Security Stack
+Cluster status monitored via:
 
-Wazuh (SIEM)
+- Proxmox Datacenter dashboard
+- SIEM dashboards (Wazuh / Elastic)
+- System logs and IDS alerts
 
-Elastic Stack
+### Current Cluster Health (Sample Snapshot)
 
-Suricata (IDS)
+- CPU Usage: ~1%
+- Memory Usage: ~53%
+- Storage Usage: ~20%
+- 3 Virtual Machines running
+- Cluster quorum maintained
+- All nodes online
 
-OPNSense Firewall
+---
 
-Zenarmor NGFW plugin
 
-Tailscale Zero-Trust VPN
+## 📖 Documentation Practices
 
-🔐 Security Capabilities Implemented
+This project emphasizes:
 
-Centralized log ingestion
+- Structured configuration documentation
+- Security runbook creation
+- Firewall rule documentation
+- Detection workflow mapping
+- MITRE ATT&CK technique mapping
+- Organized artifact repository
 
-IDS log forwarding to SIEM
+---
 
-Endpoint monitoring agents
+## 🧠 Lessons Learned
 
-Network traffic inspection
+- Importance of quorum in distributed systems
+- Resource planning in clustered environments
+- Secure segmentation design principles
+- Log normalization challenges
+- Documentation discipline for reproducibility
+- Integration of network and endpoint telemetry
 
-VPN-secured remote management
+---
 
-Firewall rule documentation
+## 🚀 Future Improvements
 
-Detection rule testing mapped to MITRE ATT&CK
+- Implement High Availability (HA) failover
+- Automate deployment using Ansible/Terraform
+- Add backup replication testing
+- Integrate cloud-based SIEM (e.g., Microsoft Sentinel)
+- Add vulnerability scanning automation
 
-Secure VM segmentation
+---
 
-🌐 Networking Design
+## 📎 Screenshot
 
-Layered network segmentation
 
-Static IP management
 
-Firewall rule enforcement
+```markdown
+![Cluster Overview](cluster-overview.png)
+```
 
-Secure VPN overlay (WireGuard/Tailscale)
+---
 
-DNS filtering via AdGuard Home
+## 📌 Project Purpose
 
-📂 Storage Design
+This lab was built to simulate enterprise infrastructure and security operations in a controlled environment, demonstrating virtualization management, network security, centralized monitoring, and structured documentation practices.
 
-TrueNAS deployed for centralized storage
-
-VM disk management via Proxmox storage pools
-
-Logical separation between:
-
-ISO storage
-
-VM disks
-
-Backup targets
-
-📊 Monitoring & Resource Management
-
-From the cluster dashboard:
-
-CPU usage: ~1%
-
-Memory usage: ~53%
-
-Storage usage: ~20%
-
-3 VMs running
-
-Cluster quorum maintained
-
-Monitoring performed via:
-
-Proxmox dashboard
-
-SIEM dashboards
-
-System logs
-
-Elastic/Kibana visualization
-
-⚙️ Skills Demonstrated
-
-Type-1 virtualization deployment
-
-Cluster formation & quorum management
-
-Linux system administration
-
-Windows domain integration
-
-Firewall configuration
-
-IDS deployment
-
-SIEM log pipeline creation
-
-Secure remote access configuration
-
-Infrastructure documentation
-
-Security control validation
+---
